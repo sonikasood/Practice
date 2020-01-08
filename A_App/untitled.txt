@@ -1,0 +1,85 @@
+https://www.kaggle.com/themissingsock/matrix-decomposition-with-buyer-data
+
+
+https://medium.com/datadriveninvestor/how-to-build-a-recommendation-system-for-purchase-data-step-by-step-d6d7a78800b6
+
+
+https://github.com/susanli2016/Machine-Learning-with-Python/blob/master/Building%20Recommender%20System%20with%20Surprise.ipynb
+
+https://towardsdatascience.com/recommendation-system-part-1-use-of-collaborative-filtering-and-hybrid-collaborative-content-in-6137ba64ad5
+
+https://stackoverflow.com/questions/19068862/how-to-overplot-a-line-on-a-scatter-plot-in-python
+
+https://stackoverflow.com/questions/3987041/run-function-from-the-command-line
+
+
+
+https://github.com/danirisdiandita/lightfm_recommendation/blob/master/recommendation_system_part_01.ipynb
+
+## read data in chunk and then concat the data 
+tp = read_csv('cmct_0430x.csv', iterator=True, chunksize=1000)
+df = concat(tp, ignore_index=True) 
+
+
+Reduced data to person having less than 20 orders
+
+becuase its not easy to handle big data in small machines
+
+
+###
+selecting columns 
+df_temp = df[['product_id','user_id','product_name','aisle_id','department_id','order_id']]
+
+
+## select user id
+df[(df['user_id'] == 1)]
+
+
+
+##Rename Columns 
+
+
+
+### scaled data
+
+from sklearn.preprocessing import MinMaxScaler
+ 
+# Create a DataFrame
+d = {
+       'Score':[62,-47,-55,74,31,77,85,63,42,67,89,81,56]}
+ 
+df = pd.DataFrame(d,columns=['Score'])
+print (df)
+
+
+
+scaler = MinMaxScaler()
+df['Score'] = scaler.fit_transform(df['Score'].values.reshape(-1,1))
+
+
+
+## turicate library for recommender system
+https://apple.github.io/turicreate/docs/userguide/recommender
+
+
+### scatter plot
+plt.title("title")
+plt.xlabel("x-label")
+plt.ylabel("y-label")
+plt.show()
+
+
+### create python class
+class BankAccount(object):
+    def __init__(self, deposit):
+        self.amount = deposit
+        print(deposit)
+
+    def withdraw(self, amount):
+        self.amount -= amount
+
+    def deposit(self, amount):
+        self.amount += amount
+
+    def balance(self):
+        return self.amount  
